@@ -12,12 +12,22 @@ repositories {
 }
 
 // Configure Gradle IntelliJ Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
+// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intell
 intellij {
-    version.set("2023.2.6")
+    version.set("2024.1.4")
     type.set("IC") // Target IDE Platform
 
-    plugins.set(listOf(/* Plugin Dependencies */))
+    plugins.set(
+        listOf(
+            "org.jetbrains.kotlin",
+            "Dart:241.18808", // IntelliJ IDEA 2024.1.4に対応するDartプラグインのバージョン
+            "io.flutter:80.0.2"  // IntelliJ IDEA 2024.1.4に対応するFlutterプラグインのバージョン
+        )
+    )
+}
+
+dependencies {
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks {
@@ -31,7 +41,7 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("232")
+        sinceBuild.set("241")
         untilBuild.set("242.*")
     }
 

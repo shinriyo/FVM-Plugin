@@ -1,5 +1,7 @@
 ## FVM Path Setter Plugin
 
+I was planning to make this, but in the end it didn’t work out and I gave up.
+
 ### Description
 
 The FVM Path Setter Plugin simplifies the process of configuring the Flutter SDK path in your IntelliJ IDEA projects. This plugin automatically detects the `.fvm/flutter_sdk` directory in your project root and sets it as the Flutter SDK path, eliminating the need for manual configuration.
